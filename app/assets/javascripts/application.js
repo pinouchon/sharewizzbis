@@ -11,5 +11,17 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery_ujs
-//= require_tree .
+//= require twitter/bootstrap
+//= require gebo/jquery-migrate.min.js
+//= require gebo/jquery.debouncedresize.min.js
+//= require gebo/jquery.actual.min.js
+//= require gebo/jquery_cookie.min.js
+//= require gebo/bootstrap.plugins.min.js
+//= require qtip2/jquery.qtip.min.js
+//= require gebo/ios-orientationchange-fix
+//= require antiscroll/antiscroll
+//= require antiscroll/jquery-mousewheel
+//= require gebo/selectNav
+//= require gebo/gebo_common
+//= require_directory .
+

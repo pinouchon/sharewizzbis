@@ -1,0 +1,10 @@
+<h1>Demandes de contact</h1>
+<table>
+  <% @requests.each do |f| %>
+      <tr>
+        <td><%= f.email %></td>
+        <td><%= link_to 'accepter', accept_friend_path(f), method: :post %></td>
+        <td><%= link_to 'pas pour l\'instant', refuse_friend_path(f), method: :post %></td>
+      </tr>
+  <% end %>
+</table>

@@ -1,4 +1,23 @@
 Sharewizzbis::Application.routes.draw do
+  devise_for :users
+  mount MailsViewer::Engine => '/mails_viewer'
+
+  resources :items
+  resources :friends do
+    collection do
+      get :index
+      get :requests
+    end
+
+    member do
+      post :invite
+      post :accept
+      post :refuse
+      post :block
+      post :remove
+    end
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -55,5 +74,5 @@ Sharewizzbis::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
-  root :to => "home#index"
+  root :to => "items#index"
 end

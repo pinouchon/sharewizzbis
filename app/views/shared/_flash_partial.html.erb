@@ -1,0 +1,15 @@
+<%#
+    Supported flash types:
+    notice: green
+    success: green
+    error: red
+    alert: red
+    info: blue
+%>
+<% flash_types = {notice: 'alert-success', error: 'alert-error', success: 'alert-success', alert: 'alert-error', info: 'alert-info'} %>
+
+<% flash_types.each do |ruby_flash, gebo_flash| %>
+    <% if flash && flash[ruby_flash] %>
+        <div class="alert <%= gebo_flash %>"><%= flash[ruby_flash] %></div>
+    <% end %>
+<% end %>

@@ -1,0 +1,19 @@
+<h1>Liste des contacts</h1>
+<table>
+  <% @friends.each do |f| %>
+      <tr>
+        <td><%= f.email %></td>
+        <td>supprimer</td>
+        <td>bloquer</td>
+      </tr>
+  <% end %>
+</table>
+<h1>Ajouter un contact:</h1>
+<table>
+  <% User.all.each do |u| %>
+      <tr>
+        <td><%= u.email %></td>
+        <td><%= link_to 'ajouter', invite_friend_path(u), method: :post  %></td>
+      </tr>
+  <% end %>
+</table>
